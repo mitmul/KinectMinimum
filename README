@@ -1,0 +1,28 @@
+KinectMinimum
+========================================
+
+OpenNIを使ってKinect for XBOX360から深度画像，カラー画像を読み込み，
+OpenCVを使って表示する最小限のサンプルです．Qtのプロジェクトにしてあります．
+
+必要なもの
+========================================
+OpenNI 1.5.2.23 unstable
+https://github.com/OpenNI/OpenNI/tree/unstable
+
+NITE Unstable v1.5.2.21
+http://75.98.78.94/Downloads/OpenNIModules.aspx
+
+OpenCV 2.4.0 beta
+http://sourceforge.net/projects/opencvlibrary/files/
+
+boost 1.48
+http://www.boost.org/
+
+注意
+=========================================
+KinectControlクラスでOpenNIを使ってデータを取得してます．
+MainWindowクラス内では，KinectControlクラスのインスタンスから
+各種getメソッドで深度やスケルトン，RGB画像を取得していますが，
+これらを無限ループで回すため，boost::threadを使っています．
+boost::threadはビルドが必要なライブラリを読み込む必要があるため，
+注意してください．
